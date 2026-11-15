@@ -1,33 +1,31 @@
 (() => {
   const CONFIG = window.LEAL_CONFIG || {};
   const ANALYTICS = window.LEAL_ANALYTICS || {};
-  const BRAND_NAME = 'Leal D’Coração — Festas & Decorações';
+  const BRAND_NAME = 'Leal Craft';
 
-  const PUBLIC_CONTACT = {
-    instagram: 'https://www.instagram.com/lealdcoracao/',
-    email: 'lealmirielen@gmail.com',
-    area: 'Guapimirim - RJ'
-  };
+  const PUBLIC_CONTACT = { instagram: CONFIG.instagram || '', email: CONFIG.email || '', area: CONFIG.areaAtendimento || 'Guapimirim • RJ' };
 
   const PRODUCTS = (window.LEAL_CATALOGO || []).filter(
     p => p.ativo !== false
   );
 
   const STORAGE = {
-    cart: 'leal_cart_v1',
-    favorites: 'leal_favorites_v1',
-    intro: 'leal_intro_seen_v3'
+    cart: 'leal_craft_cart_v2',
+    favorites: 'leal_craft_favorites_v2',
+    intro: 'leal_craft_intro_seen_v1'
   };
 
   const CATEGORY_META = {
-    todos: ['✨', 'Todos'],
-    kits: ['🎂', 'Kits'],
-    baloes: ['🎈', 'Balões'],
-    estrutura: ['🪑', 'Estrutura'],
-    equipamentos: ['🔊', 'Equipamentos'],
-    servicos: ['🎨', 'Serviços']
+    todos: ['✳','Todos'],
+    lembrancinhas: ['✿','Lembrancinhas'],
+    decoracao: ['⌂','Decoração'],
+    presentes: ['♡','Presentes personalizados'],
+    sazonais: ['✧','Datas comemorativas'],
+    infantis: ['♧','Peças infantis'],
+    pecas3d: ['⬡','Peças 3D'],
+    placas: ['◫','Topos, nomes e placas'],
+    temas: ['✦','Temas especiais']
   };
-
   let cart = safeLoad(STORAGE.cart, {});
   let favorites = safeLoad(STORAGE.favorites, []);
   let activeCategory = 'todos';
@@ -89,13 +87,6 @@
   function save() {
     localStorage.setItem(STORAGE.cart, JSON.stringify(cart));
     localStorage.setItem(STORAGE.favorites, JSON.stringify(favorites));
-  }
-
-  function money(v) {
-    return new Intl.NumberFormat(CONFIG.locale || 'pt-BR', {
-      style: 'currency',
-      currency: CONFIG.moeda || 'BRL'
-    }).format(v || 0);
   }
 
   function getProduct(id) {
@@ -400,170 +391,26 @@
 
   function initIntro() {
     const intro = $('#entryCelebration');
-
     if (!intro) return;
-
-    if (
-      new URLSearchParams(
-        location.search
-      ).has('skipIntro')
-    ) {
-      intro.style.display = 'none';
+    const skipButton = $('#skipIntroBtn');
+    const finish = () => {
+      intro.classList.add('intro-exit');
+      try { sessionStorage.setItem(STORAGE.intro, '1'); } catch {}
+      setTimeout(() => { intro.hidden = true; }, 450);
+    };
+    skipButton?.addEventListener('click', finish, { once: true });
+    let viewed = false;
+    try { viewed = !!sessionStorage.getItem(STORAGE.intro); } catch {}
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (viewed || reduced || new URLSearchParams(location.search).has('skipIntro')) {
+      intro.hidden = true;
       return;
     }
-
-    if (
-      sessionStorage.getItem(
-        STORAGE.intro
-      )
-    ) {
-      intro.style.display = 'none';
-      return;
-    }
-
-    intro.style.display = 'grid';
-
-    intro.classList.remove(
-      'entry-replay'
-    );
-
-    void intro.offsetWidth;
-
-    intro.classList.add(
-      'entry-replay'
-    );
-
-    entryConfetti();
-
-    setTimeout(() => {
-      intro.style.display = 'none';
-
-      sessionStorage.setItem(
-        STORAGE.intro,
-        '1'
-      );
-    }, 3250);
+    intro.classList.add('entry-replay');
+    setTimeout(finish, 3000);
   }
 
-  function entryConfetti() {
-    const layer = $('#confettiLayer');
-
-    if (!layer) return;
-
-    const colors = [
-      '#b86f78',
-      '#d8a2a8',
-      '#c39a57',
-      '#5f7774',
-      '#e9c8b1'
-    ];
-
-    for (let i = 0; i < 45; i++) {
-      const el =
-        document.createElement('span');
-
-      el.className =
-        'confetti-piece entry-confetti';
-
-      el.style.left =
-        `${Math.random() * 100}%`;
-
-      el.style.setProperty(
-        '--confetti',
-        colors[i % colors.length]
-      );
-
-      el.style.setProperty(
-        '--duration',
-        `${2.2 + Math.random() * 1.2}s`
-      );
-
-      el.style.setProperty(
-        '--drift',
-        `${-100 + Math.random() * 200}px`
-      );
-
-      el.style.animationDelay =
-        `${Math.random() * 0.5}s`;
-
-      layer.appendChild(el);
-
-      setTimeout(
-        () => el.remove(),
-        4000
-      );
-    }
-  }
-
-  function burst(
-    x,
-    y,
-    amount = 14
-  ) {
-    const layer = $('#confettiLayer');
-
-    if (!layer) return;
-
-    const colors = [
-      '#b86f78',
-      '#e4a7ad',
-      '#c39a57',
-      '#6e8580',
-      '#f2c986'
-    ];
-
-    for (
-      let i = 0;
-      i < amount;
-      i++
-    ) {
-      const el =
-        document.createElement('span');
-
-      el.className =
-        'confetti-piece';
-
-      el.style.left = `${x}px`;
-      el.style.top = `${y}px`;
-
-      el.style.setProperty(
-        '--confetti',
-        colors[i % colors.length]
-      );
-
-      el.style.setProperty(
-        '--rotate',
-        `${Math.random() * 180}deg`
-      );
-
-      el.style.setProperty(
-        '--end-rotate',
-        `${500 + Math.random() * 500}deg`
-      );
-
-      el.style.setProperty(
-        '--x',
-        `${-95 + Math.random() * 190}px`
-      );
-
-      el.style.setProperty(
-        '--y',
-        `${-90 + Math.random() * 160}px`
-      );
-
-      el.style.setProperty(
-        '--duration',
-        `${0.55 + Math.random() * 0.45}s`
-      );
-
-      layer.appendChild(el);
-
-      setTimeout(
-        () => el.remove(),
-        1100
-      );
-    }
-  }
+  function burst() { /* Intencionalmente sem confetes na Leal Craft. */ }
 
   function toast(msg) {
     if (!els.toast) return;
@@ -769,7 +616,7 @@
 
                 ${
                   p.demo
-                    ? '<span class="demo-label">Imagem demo</span>'
+                    ? '<span class="demo-label">Imagem ilustrativa</span>'
                     : ''
                 }
 
@@ -806,17 +653,7 @@
                   ${p.descricao}
                 </p>
 
-                <div class="product-price">
-                  <span>A partir de</span>
-
-                  <strong>
-                    ${money(p.preco)}
-                  </strong>
-
-                  <small>
-                    / ${p.unidade || 'item'}
-                  </small>
-                </div>
+                <div class="product-price craft-request-note"><span>Feito sob encomenda</span><strong>Personalizável</strong></div>
 
                 <div class="product-actions">
 
@@ -831,7 +668,7 @@
                     class="btn btn-primary"
                     data-add="${p.id}"
                   >
-                    + Carrinho
+                    + Adicionar
                   </button>
 
                 </div>
@@ -981,11 +818,6 @@
         content_ids: [p.id],
         content_name: p.nome,
         content_type: 'product',
-        value:
-          Number(p.preco || 0) *
-          qty,
-        currency:
-          CONFIG.moeda || 'BRL'
       });
     }
 
@@ -1092,9 +924,7 @@
                 </h4>
 
                 <small>
-                  ${money(p.preco)}
-                  /
-                  ${p.unidade || 'item'}
+                  Sob encomenda
                 </small>
 
                 <div class="qty-control">
@@ -1198,9 +1028,7 @@
                 </h4>
 
                 <small>
-                  ${money(p.preco)}
-                  /
-                  ${p.unidade || 'item'}
+                  Sob encomenda
                 </small>
 
                 <button
@@ -1250,78 +1078,11 @@
   }
 
   function suggestedComplements(p) {
-    const explicit =
-      Array.isArray(p.complementos)
-        ? p.complementos
-            .map(getProduct)
-            .filter(Boolean)
-            .filter(
-              x => x.id !== p.id
-            )
-        : [];
-
-    if (explicit.length) {
-      return explicit.slice(0, 3);
-    }
-
-    const priority = {
-      kits: [
-        'baloes',
-        'servicos',
-        'estrutura',
-        'equipamentos'
-      ],
-
-      baloes: [
-        'kits',
-        'servicos',
-        'estrutura'
-      ],
-
-      servicos: [
-        'kits',
-        'baloes',
-        'estrutura'
-      ],
-
-      estrutura: [
-        'kits',
-        'baloes',
-        'equipamentos'
-      ],
-
-      equipamentos: [
-        'kits',
-        'estrutura',
-        'servicos'
-      ]
-    }[p.categoria] || [
-      'kits',
-      'baloes',
-      'servicos',
-      'estrutura',
-      'equipamentos'
-    ];
-
-    const found = [];
-
-    priority.forEach(cat => {
-      const item =
-        PRODUCTS.find(
-          x =>
-            x.id !== p.id &&
-            x.categoria === cat &&
-            !found.some(
-              f => f.id === x.id
-            )
-        );
-
-      if (item) {
-        found.push(item);
-      }
-    });
-
-    return found.slice(0, 3);
+    const explicit = Array.isArray(p.complementos)
+      ? p.complementos.map(getProduct).filter(x => x && x.id !== p.id)
+      : [];
+    if (explicit.length) return explicit.slice(0, 3);
+    return PRODUCTS.filter(x => x.id !== p.id).slice(0, 3);
   }
 
   function openDrawer(drawer) {
@@ -1418,8 +1179,7 @@
     }
 
     if (els.modalPrice) {
-      els.modalPrice.textContent =
-        money(p.preco);
+      els.modalPrice.textContent = 'Sob encomenda';
     }
 
     if (
@@ -1474,9 +1234,7 @@
                     </strong>
 
                     <small>
-                      ${money(c.preco)}
-                      /
-                      ${c.unidade || 'item'}
+                      Sob encomenda
                     </small>
                   </span>
                 </button>
@@ -1653,10 +1411,6 @@
         content_ids: [p.id],
         content_name: p.nome,
         content_type: 'product',
-        value:
-          Number(p.preco || 0),
-        currency:
-          CONFIG.moeda || 'BRL'
       }
     );
 
@@ -1666,46 +1420,15 @@
   }
 
   function buildOrderMessage() {
-    const items =
-      Object.entries(cart)
-        .map(([id, qty]) => ({
-          p: getProduct(id),
-          qty
-        }))
-        .filter(x => x.p);
-
+    const items = Object.entries(cart)
+      .map(([id, qty]) => ({ p: getProduct(id), qty }))
+      .filter(x => x.p);
     const lines = [
-      'Olá! Gostaria de solicitar um orçamento.',
-      '',
-      '*Itens selecionados:*'
+      'Olá! Vi o catálogo da Leal Craft e gostaria de solicitar um orçamento.',
+      '', '*Peças selecionadas:*'
     ];
-
-    items.forEach(
-      ({ p, qty }) => {
-        const unit =
-          p.unidade
-            ? `/${p.unidade}`
-            : '';
-
-        const price =
-          Number.isFinite(
-            Number(p.preco)
-          ) &&
-          Number(p.preco) > 0
-            ? ` — ${money(p.preco)}${unit}`
-            : ' — valor sob consulta';
-
-        lines.push(
-          `• ${qty}x ${p.nome}${price}`
-        );
-      }
-    );
-
-    lines.push(
-      '',
-      'Pode me informar a disponibilidade e o valor final?'
-    );
-
+    items.forEach(({ p, qty }) => lines.push(`• ${qty}x ${p.nome}`));
+    lines.push('', 'Podemos conversar sobre tamanho, material, personalização e prazo?');
     return lines.join('\n');
   }
 
@@ -1739,7 +1462,7 @@
 
   function genericWhatsApp() {
     openWhatsApp(
-      'Olá! Gostaria de mais informações.'
+      'Olá! Conheci a Leal Craft e gostaria de conversar sobre uma peça personalizada.'
     );
   }
 
@@ -1770,8 +1493,6 @@
       'InitiateCheckout',
       {
         num_items: cartUnits(),
-        currency:
-          CONFIG.moeda || 'BRL'
       }
     );
 
@@ -2040,9 +1761,8 @@
       $('#instagramLink');
 
     if (ig) {
-      ig.href =
-        PUBLIC_CONTACT.instagram;
-
+      ig.hidden = !PUBLIC_CONTACT.instagram;
+      if (PUBLIC_CONTACT.instagram) ig.href = PUBLIC_CONTACT.instagram;
       ig.target = '_blank';
       ig.rel = 'noopener noreferrer';
     }
@@ -2051,11 +1771,9 @@
       $('#emailLink');
 
     if (email) {
-      email.href =
-        `mailto:${PUBLIC_CONTACT.email}`;
-
-      email.textContent =
-        PUBLIC_CONTACT.email;
+      email.hidden = !PUBLIC_CONTACT.email;
+      if (PUBLIC_CONTACT.email) email.href = `mailto:${PUBLIC_CONTACT.email}`;
+      email.textContent = PUBLIC_CONTACT.email;
     }
   }
 

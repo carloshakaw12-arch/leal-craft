@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720"><defs>
+    <linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#f7f1e7"/><stop offset="1" stop-color="#e9ddc9"/></linearGradient>
+    <linearGradient id="wood" x2=".8" y2="1"><stop stop-color="#f7ddb0"/><stop offset=".53" stop-color="#ddb37b"/><stop offset="1" stop-color="#bd8b58"/></linearGradient>
+    <filter id="shadow" x="-.5" y="-.5" width="2" height="2"><feDropShadow dx="8" dy="15" stdDeviation="13" flood-color="#6e4d31" flood-opacity=".3"/></filter>
+    <pattern id="grain" width="64" height="40" patternUnits="userSpaceOnUse"><path d="M1 0C13 14 -8 22 9 40M52 0C36 19 68 25 52 40" fill="none" stroke="#80512f" stroke-width="1" opacity=".12"/></pattern></defs>
+    <rect width="720" height="720" fill="url(#bg)"/><circle cx="590" cy="98" r="205" fill="#fffaf0" opacity=".64"/>
+    <path d="M0 590H720" stroke="#d3bea0" stroke-width="3"/><ellipse cx="360" cy="610" rx="218" ry="24" fill="#9b826a" opacity=".16"/>
+    <g filter="url(#shadow)"><path d="M96 376Q110 315 157 353Q174 297 223 328Q258 257 307 300Q363 238 408 293Q471 251 495 313Q577 290 589 376L588 458H100Z" fill="url(#wood)" stroke="#966039" stroke-width="8"/><text x="362" y="414" font-size="105" font-family="Georgia" font-style="italic" font-weight="bold" text-anchor="middle" fill="#784b2e">Olívia</text><path d="M142 480H583" stroke="#a77849" stroke-width="5"/><path d="M180 303q14 -45 35 -56q-3 39-35 56M496 315q40 -62 76 -58q-12 49-76 58" fill="#8b9871"/></g></svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" role="img" aria-label="Ilustração conceitual: Porta-bombom Jardim">
+ <defs>
+ <linearGradient id="ground" x2="1" y2="1"><stop stop-color="#f5f0e6"/><stop offset="1" stop-color="#e9e1d2"/></linearGradient>
+ <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead2a8"/><stop offset=".45" stop-color="#d2ad76"/><stop offset="1" stop-color="#b98e5d"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8e613d"/><stop offset="1" stop-color="#5f3f2b"/></linearGradient>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="8" dy="15" stdDeviation="12" flood-color="#6a5137" flood-opacity=".22"/></filter>
+ <pattern id="grain" width="44" height="60" patternUnits="userSpaceOnUse"><path d="M6 0 C0 17 16 35 8 60 M32 0 C24 23 42 32 30 60" fill="none" stroke="#8e6744" stroke-width=".7" opacity=".15"/></pattern>
+ </defs><rect width="800" height="700" fill="url(#ground)"/>
+ <circle cx="670" cy="105" r="210" fill="#fff9ef" opacity=".55"/><ellipse cx="405" cy="608" rx="260" ry="38" fill="#70523c" opacity=".09"/>
+ <g filter="url(#shadow)" transform="translate(145 85)">
+<path d="M252 80 C205 -7 125 32 164 111 C69 87 59 177 156 200 C89 256 176 326 252 254 C333 320 407 245 344 197 C439 175 422 81 333 106 C354 22 277 -5 252 80Z" fill="url(#edge)" stroke="#7d512d" stroke-width="9"/>
+<path d="M248 73 C204 2 140 37 178 115 C89 94 85 173 172 194 C109 244 187 306 250 238 C323 300 390 241 325 191 C415 172 398 94 316 121 C335 39 277 18 248 73Z" fill="url(#wood)" stroke="#8b633d" stroke-width="3"/>
+<circle cx="254" cy="182" r="67" fill="#744c32"/><circle cx="254" cy="182" r="55" fill="#4d332a"/><rect x="228" y="303" width="50" height="98" rx="7" fill="url(#wood)" stroke="#8b633d" stroke-width="4"/>
+<rect x="181" y="380" width="145" height="23" rx="6" fill="url(#edge)"/><rect x="183" y="376" width="141" height="18" rx="5" fill="url(#wood)"/>
+</g><g transform="translate(544 132) rotate(16)"><path d="M0 55 Q-90 -48 -74 85 Q-25 136 0 80 Q24 136 76 86 Q90 -48 0 55Z" fill="url(#wood)" stroke="#7d573b" stroke-width="5"/><path d="M0 64V111" stroke="#6b462e" stroke-width="7"/></g>
+ <text x="42" y="642" fill="#614d3e" font-family="Georgia,serif" font-size="29">Porta-bombom Jardim</text><text x="44" y="669" fill="#8c7e70" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">PEÇA ILUSTRATIVA • MDF CRU</text>
+ </svg>

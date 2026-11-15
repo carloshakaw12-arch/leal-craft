@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>Leal D’Coração Admin — Catálogo</title>
-  <link rel="stylesheet" href="admin.css?v=11" />
+  <title>Leal Craft — Painel do catálogo</title>
+  <link rel="stylesheet" href="admin.css?v=craft1" />
 </head>
 <body>
   <header class="topbar">
     <div>
-      <span class="brand">Leal <em>D’Coração</em></span>
+      <span class="brand">Leal <em>Craft</em></span>
       <small>ADMIN • CATÁLOGO</small>
     </div>
     <div class="top-actions">
@@ -35,7 +35,7 @@
 
     <section class="editor">
       <div id="emptyEditor" class="empty-editor">
-        <div>🎂</div>
+        <div>✳</div>
         <h1>Selecione um item</h1>
         <p>Altere os dados e escolha as fotos. O Admin cuida do resto.</p>
       </div>
@@ -55,37 +55,40 @@
         <div class="status-row">
           <label class="switch-line"><input id="ativo" type="checkbox" /><span>Publicado</span></label>
           <label class="switch-line"><input id="destaque" type="checkbox" /><span>Destaque</span></label>
-          <label class="switch-line"><input id="demo" type="checkbox" /><span>Imagem demo</span></label>
+          <label class="switch-line"><input id="revisado" type="checkbox" /><span>Revisado / aprovado</span></label>
         </div>
 
         <div class="grid two">
           <label>Nome<input id="nome" required /></label>
-          <label>ID / slug<input id="id" required placeholder="kit-safari" /></label>
+          <label>ID / slug<input id="id" required placeholder="placa-personalizada" /></label>
         </div>
 
         <div class="grid three">
           <label>Categoria<select id="categoria">
-            <option value="kits">Kits</option>
-            <option value="baloes">Balões</option>
-            <option value="estrutura">Estrutura</option>
-            <option value="equipamentos">Equipamentos</option>
-            <option value="servicos">Serviços</option>
+            <option value="lembrancinhas">Lembrancinhas</option>
+            <option value="decoracao">Decoração</option>
+            <option value="presentes">Presentes personalizados</option>
+            <option value="sazonais">Datas comemorativas</option>
+            <option value="infantis">Peças infantis</option>
+            <option value="pecas3d">Peças 3D</option>
+            <option value="placas">Topos, nomes e placas</option>
+            <option value="temas">Temas especiais</option>
           </select></label>
-          <label>Preço a partir de (R$)<input id="preco" type="number" min="0" step="0.01" /></label>
-          <label>Unidade<input id="unidade" placeholder="kit, unidade, serviço..." /></label>
+          <label>Material<input id="material" placeholder="MDF cru, compensado..." /></label>
+          <label>Dimensões / tamanho<input id="dimensoes" placeholder="A definir no orçamento" /></label>
         </div>
 
+        <div class="grid two"><label>Personalização disponível<input id="personalizacao" placeholder="Nome, idade, cores..." /></label><label>Imagem<select id="tipoImagem"><option value="ilustrativa">Conceito ilustrativo</option><option value="real">Fotografia real</option></select></label></div>
         <label>Descrição<textarea id="descricao" rows="4"></textarea></label>
-        <label>O que inclui <small>um item por linha</small><textarea id="inclui" rows="6" placeholder="Painel temático
-Trio de cilindros
-Tapete"></textarea></label>
-        <label>Complementos sugeridos <small>IDs dos produtos, um por linha. Se deixar vazio, o site sugere automaticamente.</small><textarea id="complementos" rows="4" placeholder="arco-organico
-pintura-facial
-cadeira-plastica"></textarea></label>
+        <label>Detalhes e possibilidades <small>um item por linha</small><textarea id="inclui" rows="6" placeholder="MDF cru
+Personalização disponível
+Acabamento a combinar"></textarea></label>
+        <label>Complementos sugeridos <small>IDs dos produtos, um por linha. Se deixar vazio, o site sugere automaticamente.</small><textarea id="complementos" rows="4" placeholder="porta-bombom-jardim
+placa-nome"></textarea></label>
 
         <section class="simple-photos">
           <div class="photos-head">
-            <div><span class="eyebrow">Galeria</span><h2>Fotos do produto</h2></div>
+            <div><span class="eyebrow">Galeria</span><h2>Imagens do produto</h2></div>
             <button type="button" id="selectPhotosBtn" class="btn primary">📸 Selecionar fotos do produto</button>
           </div>
           <p class="help">Escolha de uma vez <strong>todas as fotos que deseja manter neste produto</strong>. Elas só serão convertidas quando você gerar o pacote final. Se não selecionar novas fotos, as atuais são mantidas.</p>
@@ -112,6 +115,6 @@ cadeira-plastica"></textarea></label>
 
   <div id="toast" class="toast"></div>
   <script src="../data/catalogo.js"></script>
-  <script src="admin.js?v=11"></script>
+  <script src="admin.js?v=craft2"></script>
 </body>
 </html>

@@ -21,3 +21,7 @@
 .package-hint{border:1px solid #dfc7cb;background:#fff7f7;border-radius:14px;padding:13px 15px;display:grid;gap:4px;font-size:.75rem;line-height:1.45;color:var(--muted)}.package-hint strong{color:var(--text)}
 .package-overlay{position:fixed;inset:0;background:rgba(53,43,45,.48);z-index:100;display:grid;place-items:center;padding:20px}.package-overlay[hidden]{display:none}.package-card{width:min(430px,100%);background:#fff;border-radius:20px;padding:28px;text-align:center;box-shadow:0 20px 60px rgba(53,43,45,.22)}.package-card h2{font-family:Georgia,serif;font-weight:500;font-size:1.7rem;margin:14px 0 7px}.package-card p{margin:0;color:var(--muted);font-size:.8rem;line-height:1.5}.spinner{width:34px;height:34px;border-radius:50%;border:4px solid var(--soft);border-top-color:var(--rose);margin:auto;animation:leal-spin .8s linear infinite}@keyframes leal-spin{to{transform:rotate(360deg)}}
 @media(max-width:540px){.photo-selection-status{align-items:stretch;flex-direction:column}.photo-preview-grid{grid-template-columns:repeat(3,1fr)}#packageBtn{width:100%}}
+/* Leal Craft admin palette */
+:root{--bg:#f7f4ec;--panel:#fffcf7;--text:#343b32;--muted:#777568;--rose:#5b7057;--rose2:#9aaf8f;--line:#e1d8c7;--soft:#f0eadf;--danger:#a65345;--shadow:0 12px 34px rgba(75,59,36,.08)}
+.topbar{background:#faf8f1}.brand{font-family:Georgia,serif;letter-spacing:-.07em;font-style:italic}.topbar .brand em{color:#79755e;letter-spacing:.02em}.product-row.active{background:#f1f6ef}.package-hint{background:#f3f0e5;border-color:var(--line)}
+[hidden]{display:none!important}

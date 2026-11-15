@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720"><defs>
+    <linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#f7f1e7"/><stop offset="1" stop-color="#e9ddc9"/></linearGradient>
+    <linearGradient id="wood" x2=".8" y2="1"><stop stop-color="#f7ddb0"/><stop offset=".53" stop-color="#ddb37b"/><stop offset="1" stop-color="#bd8b58"/></linearGradient>
+    <filter id="shadow" x="-.5" y="-.5" width="2" height="2"><feDropShadow dx="8" dy="15" stdDeviation="13" flood-color="#6e4d31" flood-opacity=".3"/></filter>
+    <pattern id="grain" width="64" height="40" patternUnits="userSpaceOnUse"><path d="M1 0C13 14 -8 22 9 40M52 0C36 19 68 25 52 40" fill="none" stroke="#80512f" stroke-width="1" opacity=".12"/></pattern></defs>
+    <rect width="720" height="720" fill="url(#bg)"/><circle cx="590" cy="98" r="205" fill="#fffaf0" opacity=".64"/>
+    <path d="M0 590H720" stroke="#d3bea0" stroke-width="3"/><ellipse cx="360" cy="610" rx="218" ry="24" fill="#9b826a" opacity=".16"/>
+    <g filter="url(#shadow)"><path d="M175 400C120 350 165 250 220 258C170 175 260 122 323 177C364 107 449 144 467 195C560 168 575 270 525 315C570 389 518 436 449 436H265C232 439 202 424 175 400Z" fill="url(#wood)" stroke="#8b5835" stroke-width="9"/><path d="M266 430L269 566M454 428L451 566" stroke="#8b5835" stroke-width="16"/><path d="M266 430L269 566M454 428L451 566" stroke="#dfb278" stroke-width="10"/><path d="M196 266q45 -65 76 0M468 245q55 -54 57 27" stroke="#7c936c" stroke-width="11" fill="none"/><text x="360" y="355" font-size="62" font-family="Georgia" font-style="italic" text-anchor="middle" fill="#744629">Parabéns</text></g></svg>

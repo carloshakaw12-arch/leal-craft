@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720"><defs>
+    <linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#f7f1e7"/><stop offset="1" stop-color="#e9ddc9"/></linearGradient>
+    <linearGradient id="wood" x2=".8" y2="1"><stop stop-color="#f7ddb0"/><stop offset=".53" stop-color="#ddb37b"/><stop offset="1" stop-color="#bd8b58"/></linearGradient>
+    <filter id="shadow" x="-.5" y="-.5" width="2" height="2"><feDropShadow dx="8" dy="15" stdDeviation="13" flood-color="#6e4d31" flood-opacity=".3"/></filter>
+    <pattern id="grain" width="64" height="40" patternUnits="userSpaceOnUse"><path d="M1 0C13 14 -8 22 9 40M52 0C36 19 68 25 52 40" fill="none" stroke="#80512f" stroke-width="1" opacity=".12"/></pattern></defs>
+    <rect width="720" height="720" fill="url(#bg)"/><circle cx="590" cy="98" r="205" fill="#fffaf0" opacity=".64"/>
+    <path d="M0 590H720" stroke="#d3bea0" stroke-width="3"/><ellipse cx="360" cy="610" rx="218" ry="24" fill="#9b826a" opacity=".16"/>
+    <g filter="url(#shadow)"><circle cx="360" cy="350" r="202" fill="url(#wood)" stroke="#905d39" stroke-width="13"/><circle cx="360" cy="350" r="176" fill="none" stroke="#ac8056" stroke-width="4"/><path d="M360 163l12 38h39l-31 23 11 36-31-21-30 21 10-36-31-23h39Z" fill="#88936f"/><text x="360" y="353" font-size="38" font-family="Georgia" text-anchor="middle" fill="#75492b">Quarto do</text><text x="360" y="416" font-size="72" font-family="Georgia" font-style="italic" text-anchor="middle" fill="#75492b">Theo</text><circle cx="360" cy="175" r="12" fill="#f4e4c7" stroke="#96633e" stroke-width="7"/></g></svg>

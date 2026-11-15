@@ -1,7 +1,7 @@
 (() => {
   const SOURCE = Array.isArray(window.LEAL_CATALOGO) ? window.LEAL_CATALOGO : [];
-  const DRAFT_KEY = 'leal_admin_catalog_draft_v1';
-  const CAT_NAMES = { kits:'Kits de Festa', baloes:'Balões', estrutura:'Estrutura', equipamentos:'Equipamentos', servicos:'Serviços' };
+  const DRAFT_KEY = 'leal_craft_admin_catalog_draft_v2';
+  const CAT_NAMES = { lembrancinhas:'Lembrancinhas', decoracao:'Decoração', presentes:'Presentes personalizados', sazonais:'Datas comemorativas', infantis:'Peças infantis', pecas3d:'Peças 3D', placas:'Topos, nomes e placas', temas:'Temas especiais' };
   let products = loadDraft() || clone(SOURCE);
   let selected = products[0] || null;
 
@@ -49,12 +49,12 @@
     return real.length ? real : out;
   }
 
-  products.forEach(p=>{ p.imagens=normalizeAdminImages(p.imagens||[]); if((p.imagens||[]).some(img=>!isDemoImage(img))) p.demo=false; });
+  products.forEach(p=>{ p.imagens=normalizeAdminImages(p.imagens||[]); if((p.imagens||[]).some(img=>!isDemoImage(img))) { p.demo=false; p.tipoImagem='real'; } });
   persist();
 
   function renderList(){
     els.count.textContent=`${products.length} ${products.length===1?'item':'itens'}`;
-    els.list.innerHTML=products.map((p,i)=>`<button class="product-row ${p===selected?'active':''}" data-index="${i}"><img src="${esc(listPreview(p))}" onerror="this.onerror=null;this.src='../public/images/favicon.svg'" alt=""><span><strong>${esc(p.nome)}</strong><small>${esc(p.categoriaNome||CAT_NAMES[p.categoria]||p.categoria)} • R$ ${Number(p.preco||0).toFixed(2).replace('.',',')}</small></span><span class="badges">${pendingFiles(p).length?'📸 ':''}${p.destaque?'⭐ ':''}${p.ativo===false?'🔴':'🟢'}</span></button>`).join('');
+    els.list.innerHTML=products.map((p,i)=>`<button class="product-row ${p===selected?'active':''}" data-index="${i}"><img src="${esc(listPreview(p))}" onerror="this.onerror=null;this.src='../public/images/favicon.svg'" alt=""><span><strong>${esc(p.nome)}</strong><small>${esc(p.categoriaNome||CAT_NAMES[p.categoria]||p.categoria)} • Sob encomenda</small></span><span class="badges">${pendingFiles(p).length?'📸 ':''}${p.revisado?'✅ ':'🕒 '}${p.destaque?'⭐ ':''}${p.ativo===false?'🔴':'🟢'}</span></button>`).join('');
     document.querySelectorAll('[data-index]').forEach(b=>b.onclick=()=>{
       syncCurrentFromForm();
       selected=products[Number(b.dataset.index)] || null;
@@ -65,9 +65,9 @@
   function renderEditor(){
     const p=current(); els.form.hidden=!p; els.empty.hidden=!!p; if(!p)return;
     els.editorName.textContent=p.nome||'Produto';
-    $('#nome').value=p.nome||''; $('#id').value=p.id||''; $('#categoria').value=p.categoria||'kits'; $('#preco').value=p.preco??0;
-    $('#unidade').value=p.unidade||''; $('#descricao').value=p.descricao||''; $('#inclui').value=(p.inclui||[]).join('\n');
-    $('#complementos').value=(p.complementos||[]).join('\n'); $('#ativo').checked=p.ativo!==false; $('#destaque').checked=!!p.destaque; $('#demo').checked=!!p.demo;
+    $('#nome').value=p.nome||''; $('#id').value=p.id||''; $('#categoria').value=p.categoria||'lembrancinhas'; $('#material').value=p.material||''; $('#dimensoes').value=p.dimensoes||''; $('#personalizacao').value=p.personalizacao||''; $('#tipoImagem').value=p.tipoImagem||'ilustrativa';
+    $('#descricao').value=p.descricao||''; $('#inclui').value=(p.inclui||[]).join('\n');
+    $('#complementos').value=(p.complementos||[]).join('\n'); $('#ativo').checked=p.ativo!==false; $('#destaque').checked=!!p.destaque; $('#revisado').checked=!!p.revisado;
     renderPhotosSummary(p); els.status.textContent='Alterações salvas automaticamente.';
   }
 
@@ -75,9 +75,9 @@
     const p=current(); if(!p || els.form.hidden)return;
     const suggestedId=$('#id').value.trim() || slug($('#nome').value) || p.id || `item-${Date.now()}`;
     p.id=suggestedId; p.nome=$('#nome').value.trim()||'Novo item'; p.categoria=$('#categoria').value; p.categoriaNome=CAT_NAMES[p.categoria]||p.categoria;
-    p.preco=Number($('#preco').value||0); p.unidade=$('#unidade').value.trim()||'item'; p.descricao=$('#descricao').value.trim();
+    p.material=$('#material').value.trim(); p.dimensoes=$('#dimensoes').value.trim(); p.personalizacao=$('#personalizacao').value.trim(); p.tipoImagem=$('#tipoImagem').value; p.unidade='unidade'; p.descricao=$('#descricao').value.trim();
     p.inclui=$('#inclui').value.split('\n').map(x=>x.trim()).filter(Boolean); p.complementos=$('#complementos').value.split('\n').map(x=>x.trim()).filter(Boolean);
-    p.ativo=$('#ativo').checked; p.destaque=$('#destaque').checked; p.demo=$('#demo').checked;
+    p.ativo=$('#ativo').checked; p.destaque=$('#destaque').checked; p.revisado=$('#revisado').checked; p.demo=($('#tipoImagem').value==='ilustrativa');
     persist(); els.editorName.textContent=p.nome; els.status.textContent='Alterações salvas automaticamente.';
   }
 
@@ -98,7 +98,7 @@
     const images=(p.imagens||[]).filter(Boolean);
     els.photoStatus.innerHTML=`<div><strong>${images.length ? `${images.length} foto${images.length===1?'':'s'} atual${images.length===1?'':'is'}` : 'Sem fotos cadastradas'}</strong><span>${images.length?'Selecione novas fotos somente se quiser substituir esta galeria.':'Selecione as fotos que deseja publicar.'}</span></div>`;
     els.photoStatus.className='photo-selection-status';
-    els.photoGrid.innerHTML=images.map((img,i)=>`<figure><img src="${esc(imageUrl(img))}" onerror="this.onerror=null;this.src='../public/images/favicon.svg'" alt=""><figcaption>${isDemoImage(img)?'Demo':'Foto'} ${i+1}</figcaption></figure>`).join('');
+    els.photoGrid.innerHTML=images.map((img,i)=>`<figure><img src="${esc(imageUrl(img))}" onerror="this.onerror=null;this.src='../public/images/favicon.svg'" alt=""><figcaption>${isDemoImage(img)?'Ilustrativa':'Foto'} ${i+1}</figcaption></figure>`).join('');
   }
 
   function selectPhotos(files){
@@ -113,7 +113,7 @@
 
   function addNew(){
     syncCurrentFromForm();
-    const p={id:`novo-item-${Date.now()}`,nome:'Novo item',categoria:'kits',categoriaNome:'Kits de Festa',preco:0,unidade:'item',destaque:false,ativo:false,demo:false,descricao:'',inclui:[],complementos:[],imagens:[]};
+    const p={id:`novo-item-${Date.now()}`,nome:'Novo item',categoria:'lembrancinhas',categoriaNome:'Lembrancinhas',material:'',dimensoes:'',personalizacao:'',tipoImagem:'ilustrativa',unidade:'unidade',destaque:false,ativo:false,demo:true,revisado:false,descricao:'',inclui:[],complementos:[],imagens:[]};
     products.push(p); selected=p; persist(); renderList(); renderEditor(); $('#nome').focus();
   }
   function move(delta){ syncCurrentFromForm(); const i=products.indexOf(selected),j=i+delta; if(i<0||j<0||j>=products.length)return; [products[i],products[j]]=[products[j],products[i]]; persist(); renderList(); toast('Ordem alterada'); }
@@ -124,9 +124,9 @@
   }
 
   function cleanProduct(p){
-    const out={id:p.id,nome:p.nome,categoria:p.categoria,categoriaNome:p.categoriaNome||CAT_NAMES[p.categoria]||p.categoria,preco:Number(p.preco||0),unidade:p.unidade||'item',destaque:!!p.destaque,ativo:p.ativo!==false,demo:!!p.demo,descricao:p.descricao||'',inclui:Array.isArray(p.inclui)?p.inclui:[],complementos:Array.isArray(p.complementos)?p.complementos:[],imagens:(p.imagens||[]).map(img=>{const x={};if(img.src)x.src=img.src;if(img.alt)x.alt=img.alt;if(img.variantes&&Object.keys(img.variantes).length)x.variantes=img.variantes;return x;})}; return out;
+    const out={id:p.id,nome:p.nome,categoria:p.categoria,categoriaNome:p.categoriaNome||CAT_NAMES[p.categoria]||p.categoria,material:p.material||'',dimensoes:p.dimensoes||'',personalizacao:p.personalizacao||'',tipoImagem:p.tipoImagem||'ilustrativa',unidade:p.unidade||'unidade',destaque:!!p.destaque,ativo:p.ativo!==false,demo:!!p.demo,revisado:!!p.revisado,descricao:p.descricao||'',inclui:Array.isArray(p.inclui)?p.inclui:[],complementos:Array.isArray(p.complementos)?p.complementos:[],imagens:(p.imagens||[]).map(img=>{const x={};if(img.src)x.src=img.src;if(img.alt)x.alt=img.alt;if(img.variantes&&Object.keys(img.variantes).length)x.variantes=img.variantes;return x;})}; return out;
   }
-  function catalogText(items=products){ return `// Catálogo gerado pelo Leal D’Coração Admin em ${new Date().toLocaleString('pt-BR')}\n// Para esconder um item: ativo: false | Para destacar: destaque: true\nwindow.LEAL_CATALOGO = ${JSON.stringify(items.map(cleanProduct),null,2)};\n`; }
+  function catalogText(items=products){ return `// Catálogo gerado pelo Leal Craft Admin em ${new Date().toLocaleString('pt-BR')}\n// Para esconder um item: ativo: false | Para destacar: destaque: true\nwindow.LEAL_CATALOGO = ${JSON.stringify(items.map(cleanProduct),null,2)};\n`; }
   function validateProducts(items){
     const ids=new Set();
     for(const p of items){
@@ -163,7 +163,7 @@
     return new Blob([localData,centralData,end],{type:'application/zip'});
   }
   function downloadBlob(name,blob){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),3000);}
-  function packageName(){const d=new Date(),pad=n=>String(n).padStart(2,'0');return `Leal_DCoracao_Atualizacao_${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}.zip`;}
+  function packageName(){const d=new Date(),pad=n=>String(n).padStart(2,'0');return `Leal_Craft_Atualizacao_${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}.zip`;}
 
   async function buildCompletePackage(){
     syncCurrentFromForm();
@@ -186,7 +186,7 @@
           }
           generated.push({alt:`${targetProduct.nome} — foto ${fi+1}`,variantes:variants});
         }
-        targetProduct.imagens=generated; targetProduct.demo=false;
+        targetProduct.imagens=generated; targetProduct.demo=false; targetProduct.tipoImagem='real';
       }
       entries.unshift({path:'data/catalogo.js',blob:new Blob([catalogText(packageProducts)],{type:'text/javascript;charset=utf-8'})});
       els.progress.textContent='Montando um único ZIP…';
@@ -194,11 +194,11 @@
 
       // O rascunho passa a refletir o pacote que acabou de ser gerado.
       for(let i=0;i<products.length;i++){
-        if(pendingFiles(products[i]).length){ products[i].imagens=clone(packageProducts[i].imagens); products[i].demo=false; }
+        if(pendingFiles(products[i]).length){ products[i].imagens=clone(packageProducts[i].imagens); products[i].demo=false; products[i].tipoImagem='real'; }
       }
       persist(); renderList(); renderEditor();
       toast('Atualização completa baixada ✓');
-      setTimeout(()=>alert('Pronto! Extraia o ZIP sobre a pasta raiz leal-festas-site, aceite substituir os arquivos e faça um único commit/push no GitHub.'),100);
+      setTimeout(()=>alert('Pronto! Extraia o ZIP sobre a pasta raiz leal-craft, aceite substituir os arquivos e faça um único commit/push no GitHub.'),100);
     }catch(err){ console.error(err); alert(`Não foi possível gerar o pacote: ${err.message||err}`); }
     finally{ els.overlay.hidden=true; }
   }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" role="img" aria-label="Ilustração conceitual: Porta-retrato">
+ <defs>
+ <linearGradient id="ground" x2="1" y2="1"><stop stop-color="#f5f0e6"/><stop offset="1" stop-color="#e9e1d2"/></linearGradient>
+ <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead2a8"/><stop offset=".45" stop-color="#d2ad76"/><stop offset="1" stop-color="#b98e5d"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8e613d"/><stop offset="1" stop-color="#5f3f2b"/></linearGradient>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="8" dy="15" stdDeviation="12" flood-color="#6a5137" flood-opacity=".22"/></filter>
+ <pattern id="grain" width="44" height="60" patternUnits="userSpaceOnUse"><path d="M6 0 C0 17 16 35 8 60 M32 0 C24 23 42 32 30 60" fill="none" stroke="#8e6744" stroke-width=".7" opacity=".15"/></pattern>
+ </defs><rect width="800" height="700" fill="url(#ground)"/>
+ <circle cx="670" cy="105" r="210" fill="#fff9ef" opacity=".55"/><ellipse cx="405" cy="608" rx="260" ry="38" fill="#70523c" opacity=".09"/>
+ <g filter="url(#shadow)" transform="translate(185 108)"><rect x="40" y="6" width="390" height="410" rx="17" fill="url(#edge)"/><rect x="51" y="10" width="367" height="397" rx="13" fill="url(#wood)"/><rect x="91" y="48" width="285" height="308" rx="3" fill="#8a6c55"/><rect x="105" y="61" width="257" height="279" fill="#e5e5db"/><circle cx="286" cy="128" r="35" fill="#c2b89b"/><path d="M105 306L197 193L249 256L281 215L362 326V339H105Z" fill="#a4afa0"/><rect x="75" y="429" width="325" height="24" rx="4" fill="url(#wood)" stroke="#88653d" stroke-width="6"/><path d="M240 415V429" stroke="#704e34" stroke-width="16"/></g>
+ <text x="42" y="642" fill="#614d3e" font-family="Georgia,serif" font-size="29">Porta-retrato</text><text x="44" y="669" fill="#8c7e70" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">MODELO COM FOTO • CONCEITO</text>
+ </svg>

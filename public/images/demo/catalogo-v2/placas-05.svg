@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720"><defs>
+    <linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#f7f1e7"/><stop offset="1" stop-color="#e9ddc9"/></linearGradient>
+    <linearGradient id="wood" x2=".8" y2="1"><stop stop-color="#f7ddb0"/><stop offset=".53" stop-color="#ddb37b"/><stop offset="1" stop-color="#bd8b58"/></linearGradient>
+    <filter id="shadow" x="-.5" y="-.5" width="2" height="2"><feDropShadow dx="8" dy="15" stdDeviation="13" flood-color="#6e4d31" flood-opacity=".3"/></filter>
+    <pattern id="grain" width="64" height="40" patternUnits="userSpaceOnUse"><path d="M1 0C13 14 -8 22 9 40M52 0C36 19 68 25 52 40" fill="none" stroke="#80512f" stroke-width="1" opacity=".12"/></pattern></defs>
+    <rect width="720" height="720" fill="url(#bg)"/><circle cx="590" cy="98" r="205" fill="#fffaf0" opacity=".64"/>
+    <path d="M0 590H720" stroke="#d3bea0" stroke-width="3"/><ellipse cx="360" cy="610" rx="218" ry="24" fill="#9b826a" opacity=".16"/>
+    <g filter="url(#shadow)"><rect x="140" y="212" width="440" height="305" rx="20" fill="url(#wood)" stroke="#92613b" stroke-width="12"/><rect x="170" y="243" width="380" height="243" rx="14" fill="none" stroke="#a8794c" stroke-width="4"/><path d="M310 297q43 -64 53 9q50 -84 68 0" fill="none" stroke="#829471" stroke-width="9"/><text x="360" y="389" font-size="60" font-family="Georgia" font-style="italic" text-anchor="middle" fill="#754a2c">Ateliê Flor</text><text x="360" y="435" font-size="22" font-family="Arial" text-anchor="middle" letter-spacing="4" fill="#87613b">FEITO À MÃO</text><circle cx="162" cy="229" r="8" fill="#5c402d"/><circle cx="556" cy="229" r="8" fill="#5c402d"/></g></svg>
