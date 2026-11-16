@@ -1,6 +1,183 @@
-// Leal Craft — Catálogo de 40 conceitos ilustrativos (8 categorias x 5 peças).
-// Nenhuma imagem representa peça já fabricada. Use /admin para aprovar, editar ou ocultar.
+// Catálogo gerado pelo Leal Craft Admin em 15/11/2026, 22:52:11
+// Para esconder um item: ativo: false | Para destacar: destaque: true
 window.LEAL_CATALOGO = [
+  {
+    "id": "presepio-3d",
+    "nome": "Presépio 3D de Montar",
+    "categoria": "pecas3d",
+    "categoriaNome": "Peças 3D",
+    "material": "MDF cru / compensado (a combinar)",
+    "dimensoes": "Sugestão: 18–30 cm; confirmar no projeto",
+    "personalizacao": "Escala e acabamento",
+    "tipoImagem": "real",
+    "unidade": "unidade",
+    "destaque": true,
+    "ativo": true,
+    "demo": false,
+    "revisado": false,
+    "descricao": "Cenário de Belém em MDF, com figuras e elementos encaixados; projeto sob medida em camadas. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
+    "inclui": [
+      "Produção sob encomenda",
+      "Material e espessura a combinar",
+      "Personalização: Escala e acabamento",
+      "Dimensões e encaixes sujeitos à validação"
+    ],
+    "complementos": [],
+    "imagens": [
+      {
+        "alt": "Presépio 3D de Montar — foto 1",
+        "variantes": {
+          "sm": "public/images/catalogo/presepio-3d/01-gemini-generated-image-z1oji7z1oji7z1oj-800.webp",
+          "md": "public/images/catalogo/presepio-3d/01-gemini-generated-image-z1oji7z1oji7z1oj-1800.webp"
+        }
+      }
+    ]
+  },
+  {
+    "id": "placa-porta-infantil",
+    "nome": "Placa de Porta Infantil",
+    "categoria": "placas",
+    "categoriaNome": "Topos, nomes e placas",
+    "material": "MDF cru",
+    "dimensoes": "Sugestão: 15–22 cm; confirmar no projeto",
+    "personalizacao": "Nome e tema",
+    "tipoImagem": "real",
+    "unidade": "unidade",
+    "destaque": true,
+    "ativo": true,
+    "demo": false,
+    "revisado": false,
+    "descricao": "Plaquinha redonda com estrelas e nome, para quarto ou porta. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
+    "inclui": [
+      "Produção sob encomenda",
+      "Material e espessura a combinar",
+      "Personalização: Nome e tema",
+      "Dimensões e encaixes sujeitos à validação"
+    ],
+    "complementos": [],
+    "imagens": [
+      {
+        "alt": "Placa de Porta Infantil — foto 1",
+        "variantes": {
+          "sm": "public/images/catalogo/placa-porta-infantil/01-placa-de-madeira-lidia-com-flores-800.webp"
+        }
+      }
+    ]
+  },
+  {
+    "id": "g",
+    "nome": "gravação em espelho",
+    "categoria": "lembrancinhas",
+    "categoriaNome": "Lembrancinhas",
+    "material": "",
+    "dimensoes": "",
+    "personalizacao": "",
+    "tipoImagem": "real",
+    "unidade": "unidade",
+    "destaque": true,
+    "ativo": true,
+    "demo": false,
+    "revisado": true,
+    "descricao": "",
+    "inclui": [],
+    "complementos": [],
+    "imagens": [
+      {
+        "alt": "gravação em espelho — foto 1",
+        "variantes": {
+          "sm": "public/images/catalogo/g/01-espelho-arqueado-com-gravacao-botanica-800.webp"
+        }
+      }
+    ]
+  },
+  {
+    "id": "nome-parede",
+    "nome": "Nome Decorativo de Parede",
+    "categoria": "placas",
+    "categoriaNome": "Topos, nomes e placas",
+    "material": "MDF cru",
+    "dimensoes": "Sugestão: 20–35 cm, modular; confirmar no projeto",
+    "personalizacao": "Nome e acabamento",
+    "tipoImagem": "real",
+    "unidade": "unidade",
+    "destaque": false,
+    "ativo": true,
+    "demo": false,
+    "revisado": false,
+    "descricao": "Nome de MDF em letra cursiva com detalhes de folhas para quarto ou ambiente personalizado. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
+    "inclui": [
+      "Produção sob encomenda",
+      "Material e espessura a combinar",
+      "Personalização: Nome e acabamento",
+      "Dimensões e encaixes sujeitos à validação"
+    ],
+    "complementos": [],
+    "imagens": [
+      {
+        "alt": "Nome Decorativo de Parede — foto 1",
+        "variantes": {
+          "sm": "public/images/catalogo/nome-parede/01-placa-decorativa-angela-em-mdf-800.webp"
+        }
+      }
+    ]
+  },
+  {
+    "id": "topo-bolo-floral",
+    "nome": "Topo de Bolo Floral",
+    "categoria": "placas",
+    "categoriaNome": "Topos, nomes e placas",
+    "material": "MDF cru",
+    "dimensoes": "Sugestão: 12–18 cm de largura; confirmar no projeto",
+    "personalizacao": "Nome, idade ou frase",
+    "tipoImagem": "real",
+    "unidade": "unidade",
+    "destaque": true,
+    "ativo": true,
+    "demo": false,
+    "revisado": false,
+    "descricao": "Topo delicado com lettering e flores para ocasiões especiais. Confirmar tamanho e suportes na produção. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
+    "inclui": [
+      "Produção sob encomenda",
+      "Material e espessura a combinar",
+      "Personalização: Nome, idade ou frase",
+      "Dimensões e encaixes sujeitos à validação"
+    ],
+    "complementos": [],
+    "imagens": [
+      {
+        "alt": "Topo de Bolo Floral — foto 1",
+        "variantes": {
+          "sm": "public/images/catalogo/topo-bolo-floral/01-placa-floral-camila-henrique-800.webp"
+        }
+      }
+    ]
+  },
+  {
+    "id": "t",
+    "nome": "T rex",
+    "categoria": "lembrancinhas",
+    "categoriaNome": "Lembrancinhas",
+    "material": "",
+    "dimensoes": "",
+    "personalizacao": "",
+    "tipoImagem": "real",
+    "unidade": "unidade",
+    "destaque": false,
+    "ativo": true,
+    "demo": false,
+    "revisado": false,
+    "descricao": "",
+    "inclui": [],
+    "complementos": [],
+    "imagens": [
+      {
+        "alt": "T rex — foto 1",
+        "variantes": {
+          "sm": "public/images/catalogo/t/01-modelo-de-dinossauro-em-madeira-recortada-800.webp"
+        }
+      }
+    ]
+  },
   {
     "id": "porta-bombom-jardim",
     "nome": "Porta-bombom Jardim Encantado",
@@ -56,35 +233,6 @@ window.LEAL_CATALOGO = [
       {
         "src": "public/images/demo/catalogo-v2/fav-02.webp",
         "alt": "Imagem ilustrativa gerada digitalmente: Cestinha Abelhinha"
-      }
-    ]
-  },
-  {
-    "id": "plaquinha-nascimento",
-    "nome": "Plaquinha Meu Primeiro Ano",
-    "categoria": "lembrancinhas",
-    "categoriaNome": "Lembrancinhas",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 10–15 cm de diâmetro; confirmar no projeto",
-    "personalizacao": "Nome e data",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Plaquinha redonda com detalhe de pezinho e laço, indicada para recordações de nascimento ou aniversário. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e data",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/fav-03.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Plaquinha Meu Primeiro Ano"
       }
     ]
   },
@@ -176,35 +324,6 @@ window.LEAL_CATALOGO = [
     ]
   },
   {
-    "id": "quadro-botanico",
-    "nome": "Quadro Botânico Borboleta",
-    "categoria": "decoracao",
-    "categoriaNome": "Decoração",
-    "material": "MDF cru / compensado (a combinar)",
-    "dimensoes": "Sugestão: 20–30 cm; confirmar no projeto",
-    "personalizacao": "Cores e dedicatória",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Quadro com flor, folhas e borboleta em recortes sobrepostos, pensado para compor uma parede delicada. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Cores e dedicatória",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/dec-02.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Quadro Botânico Borboleta"
-      }
-    ]
-  },
-  {
     "id": "placa-ornamental",
     "nome": "Placa Ornamental Suspensa",
     "categoria": "decoracao",
@@ -259,35 +378,6 @@ window.LEAL_CATALOGO = [
       {
         "src": "public/images/demo/catalogo-v2/dec-04.webp",
         "alt": "Imagem ilustrativa gerada digitalmente: Casinha Jardim Decorativa"
-      }
-    ]
-  },
-  {
-    "id": "nicho-ursinho",
-    "nome": "Nicho Ursinho em Camadas",
-    "categoria": "decoracao",
-    "categoriaNome": "Decoração",
-    "material": "MDF cru / compensado (a combinar)",
-    "dimensoes": "Sugestão: 15–25 cm; confirmar no projeto",
-    "personalizacao": "Nome e paleta",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Pequeno nicho hexagonal com urso e nuvens para decorar quarto infantil ou prateleira. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e paleta",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/dec-05.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Nicho Ursinho em Camadas"
       }
     ]
   },
@@ -553,35 +643,6 @@ window.LEAL_CATALOGO = [
     ]
   },
   {
-    "id": "coelho-pascoa",
-    "nome": "Coelhinho de Páscoa",
-    "categoria": "sazonais",
-    "categoriaNome": "Datas comemorativas",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 12–20 cm; confirmar no projeto",
-    "personalizacao": "Nome e cores",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Coelhinho com ovos e flores, em peça de mesa com recortes temáticos. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e cores",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/season-05.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Coelhinho de Páscoa"
-      }
-    ]
-  },
-  {
     "id": "nome-leao-infantil",
     "nome": "Nome Infantil Leão",
     "categoria": "infantis",
@@ -607,412 +668,6 @@ window.LEAL_CATALOGO = [
       {
         "src": "public/images/demo/catalogo-v2/kids-01.webp",
         "alt": "Imagem ilustrativa gerada digitalmente: Nome Infantil Leão"
-      }
-    ]
-  },
-  {
-    "id": "placa-balao-urso",
-    "nome": "Quadro Balão com Ursinho",
-    "categoria": "infantis",
-    "categoriaNome": "Peças infantis",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 20–30 cm; confirmar no projeto",
-    "personalizacao": "Nome e cores",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Placa de parede com balão, nuvens e ursinho em relevo, para decoração afetiva. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e cores",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/kids-02.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Quadro Balão com Ursinho"
-      }
-    ]
-  },
-  {
-    "id": "quebra-cabeca-dinossauro",
-    "nome": "Quebra-cabeça Dinossauro",
-    "categoria": "infantis",
-    "categoriaNome": "Peças infantis",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 15–25 cm; confirmar no projeto",
-    "personalizacao": "Cor e nome",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Quebra-cabeça infantil de poucas peças grandes, com contorno de dinossauro. Sujeito à validação de cantos e acabamento. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Cor e nome",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/kids-03.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Quebra-cabeça Dinossauro"
-      }
-    ]
-  },
-  {
-    "id": "personagens-historias",
-    "nome": "Personagens para Contar Histórias",
-    "categoria": "infantis",
-    "categoriaNome": "Peças infantis",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 6–12 cm por peça; confirmar no projeto",
-    "personalizacao": "Personagens e quantidade",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Mini personagens independentes com bases encaixáveis para narrativas infantis e brincadeiras supervisionadas. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Personagens e quantidade",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/kids-04.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Personagens para Contar Histórias"
-      }
-    ]
-  },
-  {
-    "id": "cenarinho-fazenda",
-    "nome": "Cenário Fazenda Infantil",
-    "categoria": "infantis",
-    "categoriaNome": "Peças infantis",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 20–35 cm, por módulos; confirmar no projeto",
-    "personalizacao": "Animais e tema",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Conjunto de animais, celeiro e cercas sobre base de mesa, inspirado em histórias do campo. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Animais e tema",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/kids-05.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Cenário Fazenda Infantil"
-      }
-    ]
-  },
-  {
-    "id": "presepio-3d",
-    "nome": "Presépio 3D de Montar",
-    "categoria": "pecas3d",
-    "categoriaNome": "Peças 3D",
-    "material": "MDF cru / compensado (a combinar)",
-    "dimensoes": "Sugestão: 18–30 cm; confirmar no projeto",
-    "personalizacao": "Escala e acabamento",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": true,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Cenário de Belém em MDF, com figuras e elementos encaixados; projeto sob medida em camadas. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Escala e acabamento",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/3d-01.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Presépio 3D de Montar"
-      }
-    ]
-  },
-  {
-    "id": "quadro-paisagem-camadas",
-    "nome": "Paisagem em Camadas",
-    "categoria": "pecas3d",
-    "categoriaNome": "Peças 3D",
-    "material": "MDF cru / compensado (a combinar)",
-    "dimensoes": "Sugestão: 20–30 cm; confirmar no projeto",
-    "personalizacao": "Paisagem e cores",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Quadro tridimensional em múltiplos níveis com montanhas, casas e árvores. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Paisagem e cores",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/3d-02.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Paisagem em Camadas"
-      }
-    ]
-  },
-  {
-    "id": "leao-3d",
-    "nome": "Leão Decorativo 3D",
-    "categoria": "pecas3d",
-    "categoriaNome": "Peças 3D",
-    "material": "MDF cru / compensado (a combinar)",
-    "dimensoes": "Sugestão: 15–25 cm; confirmar no projeto",
-    "personalizacao": "Dimensão e acabamento",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Escultura decorativa em camadas, com encaixes e peças sobrepostas. Modelo de maior complexidade a validar. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Dimensão e acabamento",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/3d-03.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Leão Decorativo 3D"
-      }
-    ]
-  },
-  {
-    "id": "escultura-geometrica",
-    "nome": "Escultura Geométrica 3D",
-    "categoria": "pecas3d",
-    "categoriaNome": "Peças 3D",
-    "material": "MDF cru / compensado (a combinar)",
-    "dimensoes": "Sugestão: 12–20 cm; confirmar no projeto",
-    "personalizacao": "Formato e tamanho",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Estrutura geométrica vazada em MDF com base, feita de peças repetidas e encaixadas. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Formato e tamanho",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/3d-04.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Escultura Geométrica 3D"
-      }
-    ]
-  },
-  {
-    "id": "casinha-3d",
-    "nome": "Casinha 3D Decorativa",
-    "categoria": "pecas3d",
-    "categoriaNome": "Peças 3D",
-    "material": "MDF cru / compensado (a combinar)",
-    "dimensoes": "Sugestão: 18–30 cm; confirmar no projeto",
-    "personalizacao": "Cores e tema",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Maquete de pequena casinha com telhado, janelas e detalhes, desenvolvida em painéis modulares. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Cores e tema",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/3d-05.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Casinha 3D Decorativa"
-      }
-    ]
-  },
-  {
-    "id": "topo-bolo-floral",
-    "nome": "Topo de Bolo Floral",
-    "categoria": "placas",
-    "categoriaNome": "Topos, nomes e placas",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 12–18 cm de largura; confirmar no projeto",
-    "personalizacao": "Nome, idade ou frase",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": true,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Topo delicado com lettering e flores para ocasiões especiais. Confirmar tamanho e suportes na produção. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome, idade ou frase",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/placas-01.svg",
-        "alt": "Imagem ilustrativa gerada digitalmente: Topo de Bolo Floral"
-      }
-    ]
-  },
-  {
-    "id": "nome-parede",
-    "nome": "Nome Decorativo de Parede",
-    "categoria": "placas",
-    "categoriaNome": "Topos, nomes e placas",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 20–35 cm, modular; confirmar no projeto",
-    "personalizacao": "Nome e acabamento",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Nome de MDF em letra cursiva com detalhes de folhas para quarto ou ambiente personalizado. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e acabamento",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/placas-02.svg",
-        "alt": "Imagem ilustrativa gerada digitalmente: Nome Decorativo de Parede"
-      }
-    ]
-  },
-  {
-    "id": "placa-boas-vindas",
-    "nome": "Placa Boas-vindas Arco",
-    "categoria": "placas",
-    "categoriaNome": "Topos, nomes e placas",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 20–30 cm; confirmar no projeto",
-    "personalizacao": "Texto e detalhes",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Placa com topo arredondado e moldura discreta, para entrada, porta ou evento. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Texto e detalhes",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/placas-03.svg",
-        "alt": "Imagem ilustrativa gerada digitalmente: Placa Boas-vindas Arco"
-      }
-    ]
-  },
-  {
-    "id": "placa-porta-infantil",
-    "nome": "Placa de Porta Infantil",
-    "categoria": "placas",
-    "categoriaNome": "Topos, nomes e placas",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 15–22 cm; confirmar no projeto",
-    "personalizacao": "Nome e tema",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Plaquinha redonda com estrelas e nome, para quarto ou porta. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e tema",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/placas-04.svg",
-        "alt": "Imagem ilustrativa gerada digitalmente: Placa de Porta Infantil"
-      }
-    ]
-  },
-  {
-    "id": "placa-negocios",
-    "nome": "Placa para Negócios",
-    "categoria": "placas",
-    "categoriaNome": "Topos, nomes e placas",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 20–35 cm; confirmar no projeto",
-    "personalizacao": "Nome e logotipo",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Placa de identificação de ateliê, loja ou empreendimento com marca e informações breves. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e logotipo",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/placas-05.svg",
-        "alt": "Imagem ilustrativa gerada digitalmente: Placa para Negócios"
       }
     ]
   },
