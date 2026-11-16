@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" role="img" aria-label="Ilustração conceitual: Enfeites de Natal">
+ <defs>
+ <linearGradient id="ground" x2="1" y2="1"><stop stop-color="#f5f0e6"/><stop offset="1" stop-color="#e9e1d2"/></linearGradient>
+ <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead2a8"/><stop offset=".45" stop-color="#d2ad76"/><stop offset="1" stop-color="#b98e5d"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8e613d"/><stop offset="1" stop-color="#5f3f2b"/></linearGradient>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="8" dy="15" stdDeviation="12" flood-color="#6a5137" flood-opacity=".22"/></filter>
+ <pattern id="grain" width="44" height="60" patternUnits="userSpaceOnUse"><path d="M6 0 C0 17 16 35 8 60 M32 0 C24 23 42 32 30 60" fill="none" stroke="#8e6744" stroke-width=".7" opacity=".15"/></pattern>
+ </defs><rect width="800" height="700" fill="url(#ground)"/>
+ <circle cx="670" cy="105" r="210" fill="#fff9ef" opacity=".55"/><ellipse cx="405" cy="608" rx="260" ry="38" fill="#70523c" opacity=".09"/>
+ <g filter="url(#shadow)" stroke="#8d613d" stroke-width="5" fill="url(#wood)"><circle cx="260" cy="301" r="120"/><circle cx="260" cy="301" r="105" fill="none" stroke="#a37649" stroke-width="2"/><path d="M260 260l18 30h38l-29 24 11 35-38-20-35 20 10-35-30-24h38Z" fill="#9a6841"/><circle cx="260" cy="170" r="14" fill="#d6b283"/><circle cx="520" cy="320" r="113"/><circle cx="520" cy="195" r="12" fill="#d6b283"/><path d="M520 244L574 341H466Z" fill="#826042"/><rect x="504" y="338" width="32" height="49" fill="#826042"/><rect x="175" y="435" width="380" height="24" rx="7" fill="url(#edge)"/></g>
+ <text x="42" y="642" fill="#614d3e" font-family="Georgia,serif" font-size="29">Enfeites de Natal</text><text x="44" y="669" fill="#8c7e70" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">PEÇAS SAZONAIS • CONCEITO</text>
+ </svg>

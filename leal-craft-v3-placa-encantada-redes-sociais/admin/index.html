@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Leal Craft — Painel do catálogo</title>
+  <link rel="stylesheet" href="admin.css?v=craft1" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <span class="brand">Leal <em>Craft</em></span>
+      <small>ADMIN • CATÁLOGO</small>
+    </div>
+    <div class="top-actions">
+      <button id="resetBtn" class="btn ghost">Descartar rascunho</button>
+      <button id="packageBtn" class="btn primary">⬇ Baixar atualização completa</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <div><strong>Produtos</strong><span id="productCount">0 itens</span></div>
+        <button id="newBtn" class="round" title="Novo produto">+</button>
+      </div>
+      <div id="productList" class="product-list"></div>
+      <div class="workflow-note">
+        <strong>Fluxo simples</strong>
+        <span>Edite quantos produtos quiser. Tudo é salvo automaticamente neste navegador.</span>
+        <span>No final, use <b>Baixar atualização completa</b> uma única vez.</span>
+      </div>
+    </aside>
+
+    <section class="editor">
+      <div id="emptyEditor" class="empty-editor">
+        <div>✳</div>
+        <h1>Selecione um item</h1>
+        <p>Altere os dados e escolha as fotos. O Admin cuida do resto.</p>
+      </div>
+
+      <form id="productForm" class="product-form" hidden>
+        <div class="editor-title">
+          <div><span class="eyebrow">Editar item</span><h1 id="editorName">Produto</h1></div>
+          <div class="editor-actions">
+            <button type="button" id="moveUpBtn" class="btn ghost">↑ Subir</button>
+            <button type="button" id="moveDownBtn" class="btn ghost">↓ Descer</button>
+            <button type="button" id="deleteBtn" class="btn danger">Excluir</button>
+          </div>
+        </div>
+
+        <div class="autosave-line"><span class="autosave-dot"></span><span id="saveStatus">Alterações salvas automaticamente.</span></div>
+
+        <div class="status-row">
+          <label class="switch-line"><input id="ativo" type="checkbox" /><span>Publicado</span></label>
+          <label class="switch-line"><input id="destaque" type="checkbox" /><span>Destaque</span></label>
+          <label class="switch-line"><input id="revisado" type="checkbox" /><span>Revisado / aprovado</span></label>
+        </div>
+
+        <div class="grid two">
+          <label>Nome<input id="nome" required /></label>
+          <label>ID / slug<input id="id" required placeholder="placa-personalizada" /></label>
+        </div>
+
+        <div class="grid three">
+          <label>Categoria<select id="categoria">
+            <option value="lembrancinhas">Lembrancinhas</option>
+            <option value="decoracao">Decoração</option>
+            <option value="presentes">Presentes personalizados</option>
+            <option value="sazonais">Datas comemorativas</option>
+            <option value="infantis">Peças infantis</option>
+            <option value="pecas3d">Peças 3D</option>
+            <option value="placas">Topos, nomes e placas</option>
+            <option value="temas">Temas especiais</option>
+          </select></label>
+          <label>Material<input id="material" placeholder="MDF cru, compensado..." /></label>
+          <label>Dimensões / tamanho<input id="dimensoes" placeholder="A definir no orçamento" /></label>
+        </div>
+
+        <div class="grid two"><label>Personalização disponível<input id="personalizacao" placeholder="Nome, idade, cores..." /></label><label>Imagem<select id="tipoImagem"><option value="ilustrativa">Conceito ilustrativo</option><option value="real">Fotografia real</option></select></label></div>
+        <label>Descrição<textarea id="descricao" rows="4"></textarea></label>
+        <label>Detalhes e possibilidades <small>um item por linha</small><textarea id="inclui" rows="6" placeholder="MDF cru
+Personalização disponível
+Acabamento a combinar"></textarea></label>
+        <label>Complementos sugeridos <small>IDs dos produtos, um por linha. Se deixar vazio, o site sugere automaticamente.</small><textarea id="complementos" rows="4" placeholder="porta-bombom-jardim
+placa-nome"></textarea></label>
+
+        <section class="simple-photos">
+          <div class="photos-head">
+            <div><span class="eyebrow">Galeria</span><h2>Imagens do produto</h2></div>
+            <button type="button" id="selectPhotosBtn" class="btn primary">📸 Selecionar fotos do produto</button>
+          </div>
+          <p class="help">Escolha de uma vez <strong>todas as fotos que deseja manter neste produto</strong>. Elas só serão convertidas quando você gerar o pacote final. Se não selecionar novas fotos, as atuais são mantidas.</p>
+          <input id="productPhotoInput" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden />
+          <div id="photoSelectionStatus" class="photo-selection-status"></div>
+          <div id="photoPreviewGrid" class="photo-preview-grid"></div>
+        </section>
+
+        <div class="package-hint">
+          <strong>Quando terminar:</strong>
+          <span>Não precisa salvar item por item nem baixar catalogo.js separado. Clique em <b>Baixar atualização completa</b> no topo.</span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div id="packageOverlay" class="package-overlay" hidden>
+    <div class="package-card">
+      <div class="spinner"></div>
+      <h2>Preparando atualização</h2>
+      <p id="packageProgress">Organizando catálogo…</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="../data/catalogo.js"></script>
+  <script src="admin.js?v=craft2"></script>
+</body>
+</html>

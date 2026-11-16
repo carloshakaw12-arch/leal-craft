@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" role="img" aria-label="Ilustração conceitual: Chaveiros">
+ <defs>
+ <linearGradient id="ground" x2="1" y2="1"><stop stop-color="#f5f0e6"/><stop offset="1" stop-color="#e9e1d2"/></linearGradient>
+ <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead2a8"/><stop offset=".45" stop-color="#d2ad76"/><stop offset="1" stop-color="#b98e5d"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8e613d"/><stop offset="1" stop-color="#5f3f2b"/></linearGradient>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="8" dy="15" stdDeviation="12" flood-color="#6a5137" flood-opacity=".22"/></filter>
+ <pattern id="grain" width="44" height="60" patternUnits="userSpaceOnUse"><path d="M6 0 C0 17 16 35 8 60 M32 0 C24 23 42 32 30 60" fill="none" stroke="#8e6744" stroke-width=".7" opacity=".15"/></pattern>
+ </defs><rect width="800" height="700" fill="url(#ground)"/>
+ <circle cx="670" cy="105" r="210" fill="#fff9ef" opacity=".55"/><ellipse cx="405" cy="608" rx="260" ry="38" fill="#70523c" opacity=".09"/>
+ <g filter="url(#shadow)"><g transform="translate(212 177) rotate(-16)"><path d="M110 -34C110-70 160-70 160-34" stroke="#84827d" stroke-width="13" fill="none"/><circle cx="135" cy="8" r="36" fill="none" stroke="#aaa9a2" stroke-width="12"/><rect x="24" y="30" width="217" height="264" rx="35" fill="url(#edge)"/><rect x="33" y="36" width="200" height="249" rx="31" fill="url(#wood)"/><circle cx="133" cy="71" r="17" fill="#7d583c"/><text x="132" y="190" fill="#70452e" font-family="Georgia" font-size="86" text-anchor="middle">L</text></g><g transform="translate(455 192) rotate(13)"><circle cx="97" cy="-10" r="34" fill="none" stroke="#aaa9a2" stroke-width="11"/><circle cx="97" cy="172" r="126" fill="url(#edge)"/><circle cx="97" cy="169" r="116" fill="url(#wood)"/><circle cx="97" cy="75" r="16" fill="#7d583c"/><text x="97" y="207" fill="#754a2e" font-size="87" font-family="Georgia" text-anchor="middle">A</text></g></g>
+ <text x="42" y="642" fill="#614d3e" font-family="Georgia,serif" font-size="29">Chaveiros</text><text x="44" y="669" fill="#8c7e70" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">PRESENTES PERSONALIZÁVEIS</text>
+ </svg>
