@@ -1,4 +1,4 @@
-// Catálogo gerado pelo Leal Craft Admin em 15/11/2026, 22:52:11
+// Catálogo gerado pelo Leal Craft Admin em 15/11/2026, 23:09:16
 // Para esconder um item: ativo: false | Para destacar: destaque: true
 window.LEAL_CATALOGO = [
   {
@@ -78,7 +78,7 @@ window.LEAL_CATALOGO = [
     "ativo": true,
     "demo": false,
     "revisado": true,
-    "descricao": "",
+    "descricao": "Transforme espelhos em peças únicas, combinando elegância, criatividade e significado. Por meio da gravação a laser no verso do espelho, criamos desenhos, nomes, frases e detalhes personalizados que valorizam a peça sem comprometer sua superfície frontal.\n\nIdeal para presentes especiais, decoração de ambientes, lembranças comemorativas e projetos exclusivos.",
     "inclui": [],
     "complementos": [],
     "imagens": [
@@ -179,6 +179,64 @@ window.LEAL_CATALOGO = [
     ]
   },
   {
+    "id": "jardim-passarinhos",
+    "nome": "Jardim Encantado — Passarinhos",
+    "categoria": "temas",
+    "categoriaNome": "Temas especiais",
+    "material": "MDF cru",
+    "dimensoes": "Sugestão: 8–12 cm; confirmar no projeto",
+    "personalizacao": "Nome, idade e tema",
+    "tipoImagem": "ilustrativa",
+    "unidade": "unidade",
+    "destaque": true,
+    "ativo": true,
+    "demo": true,
+    "revisado": false,
+    "descricao": "Porta-doce em formato de cesta com flores e pássaro, ideal como peça temática de festa. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
+    "inclui": [
+      "Produção sob encomenda",
+      "Material e espessura a combinar",
+      "Personalização: Nome, idade e tema",
+      "Dimensões e encaixes sujeitos à validação"
+    ],
+    "complementos": [],
+    "imagens": [
+      {
+        "src": "public/images/demo/catalogo-v2/special-01.webp",
+        "alt": "Imagem ilustrativa gerada digitalmente: Jardim Encantado — Passarinhos"
+      }
+    ]
+  },
+  {
+    "id": "espelho-moldura",
+    "nome": "Espelho com Moldura Floral",
+    "categoria": "presentes",
+    "categoriaNome": "Presentes personalizados",
+    "material": "MDF cru",
+    "dimensoes": "Sugestão: 20–30 cm; confirmar no projeto",
+    "personalizacao": "Formato e cor",
+    "tipoImagem": "ilustrativa",
+    "unidade": "unidade",
+    "destaque": false,
+    "ativo": true,
+    "demo": true,
+    "revisado": false,
+    "descricao": "Moldura vazada em MDF para aplicação de espelho adquirido separadamente; corte da peça de madeira sob encomenda. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
+    "inclui": [
+      "Produção sob encomenda",
+      "Material e espessura a combinar",
+      "Personalização: Formato e cor",
+      "Dimensões e encaixes sujeitos à validação"
+    ],
+    "complementos": [],
+    "imagens": [
+      {
+        "src": "public/images/demo/catalogo-v2/gift-04.webp",
+        "alt": "Imagem ilustrativa gerada digitalmente: Espelho com Moldura Floral"
+      }
+    ]
+  },
+  {
     "id": "porta-bombom-jardim",
     "nome": "Porta-bombom Jardim Encantado",
     "categoria": "lembrancinhas",
@@ -233,6 +291,35 @@ window.LEAL_CATALOGO = [
       {
         "src": "public/images/demo/catalogo-v2/fav-02.webp",
         "alt": "Imagem ilustrativa gerada digitalmente: Cestinha Abelhinha"
+      }
+    ]
+  },
+  {
+    "id": "jardim-borboletas",
+    "nome": "Jardim Encantado — Borboletas",
+    "categoria": "temas",
+    "categoriaNome": "Temas especiais",
+    "material": "MDF cru",
+    "dimensoes": "Sugestão: 8–12 cm; confirmar no projeto",
+    "personalizacao": "Nome e cores",
+    "tipoImagem": "ilustrativa",
+    "unidade": "unidade",
+    "destaque": false,
+    "ativo": true,
+    "demo": true,
+    "revisado": false,
+    "descricao": "Porta-bombom com borboleta vazada em MDF cru e espaço para um doce embalado. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
+    "inclui": [
+      "Produção sob encomenda",
+      "Material e espessura a combinar",
+      "Personalização: Nome e cores",
+      "Dimensões e encaixes sujeitos à validação"
+    ],
+    "complementos": [],
+    "imagens": [
+      {
+        "src": "public/images/demo/catalogo-v2/special-02.webp",
+        "alt": "Imagem ilustrativa gerada digitalmente: Jardim Encantado — Borboletas"
       }
     ]
   },
@@ -304,8 +391,8 @@ window.LEAL_CATALOGO = [
     "personalizacao": "Nomes e fotos",
     "tipoImagem": "ilustrativa",
     "unidade": "unidade",
-    "destaque": true,
-    "ativo": true,
+    "destaque": false,
+    "ativo": false,
     "demo": true,
     "revisado": false,
     "descricao": "Composição em camadas com folhas e corações; pode receber espaços adaptados para fotos da família. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
@@ -334,7 +421,7 @@ window.LEAL_CATALOGO = [
     "tipoImagem": "ilustrativa",
     "unidade": "unidade",
     "destaque": false,
-    "ativo": true,
+    "ativo": false,
     "demo": true,
     "revisado": false,
     "descricao": "Placa de moldura orgânica e detalhes botânicos, para frase, nome ou mensagem de boas-vindas. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
@@ -363,7 +450,7 @@ window.LEAL_CATALOGO = [
     "tipoImagem": "ilustrativa",
     "unidade": "unidade",
     "destaque": false,
-    "ativo": true,
+    "ativo": false,
     "demo": true,
     "revisado": false,
     "descricao": "Cenário de casinha com cerca e flores recortadas, com possibilidade de iluminação LED independente. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
@@ -465,35 +552,6 @@ window.LEAL_CATALOGO = [
       {
         "src": "public/images/demo/catalogo-v2/gift-03.webp",
         "alt": "Imagem ilustrativa gerada digitalmente: Placa de Mensagem Afetiva"
-      }
-    ]
-  },
-  {
-    "id": "espelho-moldura",
-    "nome": "Espelho com Moldura Floral",
-    "categoria": "presentes",
-    "categoriaNome": "Presentes personalizados",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 20–30 cm; confirmar no projeto",
-    "personalizacao": "Formato e cor",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Moldura vazada em MDF para aplicação de espelho adquirido separadamente; corte da peça de madeira sob encomenda. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Formato e cor",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/gift-04.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Espelho com Moldura Floral"
       }
     ]
   },
@@ -639,93 +697,6 @@ window.LEAL_CATALOGO = [
       {
         "src": "public/images/demo/catalogo-v2/season-04.webp",
         "alt": "Imagem ilustrativa gerada digitalmente: Corações Dia dos Namorados"
-      }
-    ]
-  },
-  {
-    "id": "nome-leao-infantil",
-    "nome": "Nome Infantil Leão",
-    "categoria": "infantis",
-    "categoriaNome": "Peças infantis",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 20–35 cm; confirmar no projeto",
-    "personalizacao": "Nome e paleta",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": true,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Nome em MDF com leão e folhagens em camadas para prateleira ou decoração do quarto. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e paleta",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/kids-01.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Nome Infantil Leão"
-      }
-    ]
-  },
-  {
-    "id": "jardim-passarinhos",
-    "nome": "Jardim Encantado — Passarinhos",
-    "categoria": "temas",
-    "categoriaNome": "Temas especiais",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 8–12 cm; confirmar no projeto",
-    "personalizacao": "Nome, idade e tema",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": true,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Porta-doce em formato de cesta com flores e pássaro, ideal como peça temática de festa. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome, idade e tema",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/special-01.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Jardim Encantado — Passarinhos"
-      }
-    ]
-  },
-  {
-    "id": "jardim-borboletas",
-    "nome": "Jardim Encantado — Borboletas",
-    "categoria": "temas",
-    "categoriaNome": "Temas especiais",
-    "material": "MDF cru",
-    "dimensoes": "Sugestão: 8–12 cm; confirmar no projeto",
-    "personalizacao": "Nome e cores",
-    "tipoImagem": "ilustrativa",
-    "unidade": "unidade",
-    "destaque": false,
-    "ativo": true,
-    "demo": true,
-    "revisado": false,
-    "descricao": "Porta-bombom com borboleta vazada em MDF cru e espaço para um doce embalado. Imagem conceitual; detalhes e execução final dependem de aprovação do projeto.",
-    "inclui": [
-      "Produção sob encomenda",
-      "Material e espessura a combinar",
-      "Personalização: Nome e cores",
-      "Dimensões e encaixes sujeitos à validação"
-    ],
-    "complementos": [],
-    "imagens": [
-      {
-        "src": "public/images/demo/catalogo-v2/special-02.webp",
-        "alt": "Imagem ilustrativa gerada digitalmente: Jardim Encantado — Borboletas"
       }
     ]
   },
