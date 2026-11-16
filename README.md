@@ -22,7 +22,7 @@ Catálogo artesanal de peças em MDF e corte a laser, adaptado do antigo site Le
 ## Antes de publicar
 
 - **WhatsApp:** confira o número em `js/config.js`; ele foi preservado do site anterior.
-- **Instagram/e-mail:** deixados ocultos até você configurar contas/endereços da Leal Craft em `js/config.js`.
+- **Redes sociais:** Instagram e Facebook já foram configurados com os links fornecidos. O e-mail continua oculto; os endereços podem ser alterados em `js/config.js`.
 - **Produtos:** os 40 conceitos estão ilustrados com imagens geradas digitalmente ou composições vetoriais próprias. **Não são fotos reais nem arquivos de corte prontos**. Avalie a viabilidade de cada modelo na SCULPFUN antes de prometer execução.
 - **Hospedagem:** ainda não foi feito deploy. O ZIP é um projeto de site estático, pronto para envio ao GitHub e à hospedagem que você usar.
 
@@ -67,3 +67,17 @@ As imagens foram **geradas para a Leal Craft** (não copiadas de catálogos de t
 ### Categorias (5 itens cada)
 
 Lembrancinhas · Decoração · Presentes personalizados · Datas comemorativas · Peças infantis · Peças 3D · Topos, nomes e placas · Temas especiais.
+
+
+## Atualização V3 — 1C A Placa Encantada
+- Abertura curta (~3,55 s) com placa de MDF, inscrição Leal e **Craft** gravado seguindo os contornos vetoriais reais das letras (SVG + JavaScript).
+- Efeito de ponto de laser, partículas e pequenos recortes/folhas de madeira; algumas partículas atravessam o desaparecimento da abertura. Sem vídeos, bibliotecas externas ou imagens adicionais pesadas.
+- Ícone de carrinho substituído por SVG na barra principal, no carrinho flutuante, no estado vazio e na seção de como funciona.
+- A abertura é exibida uma vez por sessão; para testá-la novamente, abra a página com `?replayIntro=1`. Para ignorá-la, use `?skipIntro=1`. Preferência de movimento reduzido respeitada.
+- Nada foi alterado no catálogo (40 produtos), no carrinho, nas categorias ou no envio por WhatsApp.
+- Para publicar, substitua os arquivos do repositório GitHub pelos conteúdos desta pasta (não faça upload apenas do ZIP). O Render publicará o novo commit caso esteja conectado para deploy automático.
+
+
+## Complemento V3 — contatos oficiais
+- Links do **Instagram** (`@leal_craft`) e **Facebook** incorporados ao rodapé, junto do WhatsApp, com ícones vetoriais. Abrem em nova aba.
+- Atualizações de links: `js/config.js` (`instagram` e `facebook`). E-mail permanece oculto.

@@ -3,7 +3,7 @@
   const ANALYTICS = window.LEAL_ANALYTICS || {};
   const BRAND_NAME = 'Leal Craft';
 
-  const PUBLIC_CONTACT = { instagram: CONFIG.instagram || '', email: CONFIG.email || '', area: CONFIG.areaAtendimento || 'Guapimirim • RJ' };
+  const PUBLIC_CONTACT = { instagram: CONFIG.instagram || '', facebook: CONFIG.facebook || '', email: CONFIG.email || '', area: CONFIG.areaAtendimento || 'Guapimirim • RJ' };
 
   const PRODUCTS = (window.LEAL_CATALOGO || []).filter(
     p => p.ativo !== false
@@ -12,7 +12,7 @@
   const STORAGE = {
     cart: 'leal_craft_cart_v2',
     favorites: 'leal_craft_favorites_v2',
-    intro: 'leal_craft_intro_seen_v1'
+    intro: 'leal_craft_intro_seen_v3'
   };
 
   const CATEGORY_META = {
@@ -389,25 +389,135 @@
     );
   }
 
+  // The intro uses real SVG glyph outlines. The laser traverses each contour,
+  // rather than sweeping horizontally across a static word.
   function initIntro() {
     const intro = $('#entryCelebration');
     if (!intro) return;
     const skipButton = $('#skipIntroBtn');
-    const finish = () => {
-      intro.classList.add('intro-exit');
-      try { sessionStorage.setItem(STORAGE.intro, '1'); } catch {}
-      setTimeout(() => { intro.hidden = true; }, 450);
-    };
-    skipButton?.addEventListener('click', finish, { once: true });
+    const svg = $('#introCraftSvg');
+    const sparkLayer = $('#introSparkLayer');
+    const laserHead = $('#introLaserHead');
+    const fallout = $('#introFallout');
+    const paths = [...intro.querySelectorAll('.intro-letter')];
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const query = new URLSearchParams(location.search);
     let viewed = false;
     try { viewed = !!sessionStorage.getItem(STORAGE.intro); } catch {}
-    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (viewed || reduced || new URLSearchParams(location.search).has('skipIntro')) {
+    if (reduced || query.has('skipIntro') || (viewed && !query.has('replayIntro'))) {
       intro.hidden = true;
       return;
     }
+
+    const CUT_START = 780;
+    const CUT_DURATION = 1720;
+    const END_DELAY = 3550;
+    const timeouts = [];
+    const schedule = (fn, ms) => {
+      const id = window.setTimeout(fn, ms);
+      timeouts.push(id);
+      return id;
+    };
+    let frame = 0;
+    let finished = false;
+    let particlesLast = -1;
+    let startTime = 0;
+
+    function woodSpark(x, y) {
+      if (!sparkLayer) return;
+      const chip = document.createElement('span');
+      chip.className = 'intro-spark';
+      // Positions are percentages, so sparks stay on the lettering in mobile layouts.
+      chip.style.left = `${x}%`;
+      chip.style.top = `${y}%`;
+      chip.style.setProperty('--spark-x', `${(Math.random() - .5) * 50}px`);
+      chip.style.setProperty('--spark-y', `${-7 - Math.random() * 28}px`);
+      chip.style.setProperty('--spark-rotation', `${Math.random() * 160 - 80}deg`);
+      chip.style.animationDuration = `${.38 + Math.random() * .45}s`;
+      sparkLayer.appendChild(chip);
+      chip.addEventListener('animationend', () => chip.remove(), { once: true });
+    }
+
+    function scatterWood() {
+      if (!fallout) return;
+      fallout.replaceChildren();
+      const amount = Math.min(22, window.innerWidth < 520 ? 13 : 22);
+      for (let i = 0; i < amount; i++) {
+        const el = document.createElement('span');
+        el.className = i % 5 === 0 ? 'fallout-leaf' : 'fallout-chip';
+        el.style.left = `${20 + Math.random() * 60}%`;
+        el.style.top = `${30 + Math.random() * 24}%`;
+        el.style.setProperty('--fallout-x', `${(Math.random() - .5) * 320}px`);
+        el.style.setProperty('--fallout-y', `${90 + Math.random() * 240}px`);
+        el.style.setProperty('--fallout-spin', `${Math.random() * 900 - 450}deg`);
+        el.style.animationDelay = `${Math.random() * .35}s`;
+        fallout.appendChild(el);
+      }
+      schedule(() => fallout.replaceChildren(), 2400);
+    }
+
+    const strokes = paths.map(path => {
+      const len = path.getTotalLength();
+      path.style.strokeDasharray = `${len}`;
+      path.style.strokeDashoffset = `${len}`;
+      path.style.fillOpacity = '0';
+      path.style.strokeOpacity = '0';
+      return { path, len, x: Number(path.dataset.x), baseline: Number(path.dataset.baseline), scale: Number(path.dataset.scale) };
+    });
+
+    const svgWidth = svg?.viewBox.baseVal.width || 520;
+    const svgHeight = svg?.viewBox.baseVal.height || 130;
+
+    function animateLaser(now) {
+      if (finished) return;
+      if (!startTime) startTime = now;
+      const elapsed = now - startTime;
+      const progress = Math.min(1, Math.max(0, (elapsed - CUT_START) / CUT_DURATION));
+      const charProgress = progress * strokes.length;
+      const activeIndex = Math.min(strokes.length - 1, Math.floor(charProgress));
+      strokes.forEach(({path,len},i) => {
+        const localProgress = Math.max(0, Math.min(1, charProgress - i));
+        path.style.strokeDashoffset = `${len * (1 - localProgress)}`;
+        path.style.strokeOpacity = localProgress > 0 ? '1' : '0';
+        path.style.fillOpacity = localProgress >= .93 ? String(Math.min(1, (localProgress - .93) / .07)) : '0';
+      });
+      if (elapsed >= CUT_START && progress < 1 && strokes.length && laserHead) {
+        const glyph = strokes[activeIndex];
+        const pt = glyph.path.getPointAtLength(glyph.len * Math.max(0, Math.min(1, charProgress - activeIndex)));
+        const x = glyph.x + pt.x * glyph.scale;
+        const y = glyph.baseline - pt.y * glyph.scale;
+        laserHead.setAttribute('transform', `translate(${x} ${y})`);
+        laserHead.style.opacity = '1';
+        if (Math.floor(elapsed / 48) !== particlesLast) {
+          particlesLast = Math.floor(elapsed / 48);
+          woodSpark(x / svgWidth * 100, y / svgHeight * 100);
+        }
+      } else if (laserHead) {
+        laserHead.style.opacity = '0';
+      }
+      if (progress < 1) {
+        frame = requestAnimationFrame(animateLaser);
+      } else {
+        intro.classList.add('intro-engraved');
+        scatterWood();
+      }
+    }
+
+    function finish() {
+      if (finished) return;
+      finished = true;
+      cancelAnimationFrame(frame);
+      timeouts.forEach(clearTimeout);
+      intro.classList.add('intro-exit');
+      try { sessionStorage.setItem(STORAGE.intro, '1'); } catch {}
+      window.setTimeout(() => { intro.hidden = true; }, 550);
+      window.setTimeout(() => { fallout?.replaceChildren(); }, 1900);
+    }
+
+    skipButton?.addEventListener('click', finish, { once: true });
     intro.classList.add('entry-replay');
-    setTimeout(finish, 3000);
+    frame = requestAnimationFrame(animateLaser);
+    schedule(finish, END_DELAY);
   }
 
   function burst() { /* Intencionalmente sem confetes na Leal Craft. */ }
@@ -1765,6 +1875,16 @@
       if (PUBLIC_CONTACT.instagram) ig.href = PUBLIC_CONTACT.instagram;
       ig.target = '_blank';
       ig.rel = 'noopener noreferrer';
+    }
+
+    const fb =
+      $('#facebookLink');
+
+    if (fb) {
+      fb.hidden = !PUBLIC_CONTACT.facebook;
+      if (PUBLIC_CONTACT.facebook) fb.href = PUBLIC_CONTACT.facebook;
+      fb.target = '_blank';
+      fb.rel = 'noopener noreferrer';
     }
 
     const email =
